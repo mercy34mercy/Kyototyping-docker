@@ -1,38 +1,91 @@
-.App {
+.inputbar {
+  border-radius: 2rem;
+  width: 100%;
+  padding-top: 20vh;
+
+}
+
+.baranimation {
+  animation: anim 2.5s infinite linear;
+}
+
+.questionBox {
+  padding-top: 5.5rem;
+  font-size: 5rem;
+  height: 6rem;
+  text-align: center;
+  color: #008AE2;
+  font-weight: bold
+}
+
+.textOutput {
+  padding-bottom: 3rem;
+  font-size: 3rem;
+  height: 10rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.colorGray {
+  color: #008AE2;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.colorwhiteGray {
+  color: black;
+}
+
+.blue {
+  filter: invert(8%) sepia(99%) saturate(7044%) hue-rotate(247deg) brightness(100%) contrast(145%);
+}
+
+.Game {
+  /* text-align: center; */
+  height: 100%;
+  background-image: url("../public/city.png");
+  background-size: cover;
+  /* backdrop-filter: invert(8%) sepia(99%) saturate(7044%) hue-rotate(247deg) brightness(100%) contrast(145%); */
+}
+
+.Game img {
+  filter: invert(8%) sepia(99%) saturate(7044%) hue-rotate(247deg) brightness(100%) contrast(145%);
+}
+
+.game {
+  background-image: url("../public/inputbar.png");
+  background-size: cover;
+  width: 70rem;
+  height: 20rem;
+  margin: 0 auto;
+}
+
+
+.kanban {
+
+  width: 50rem;
+}
+
+.manue {
+  width: 100%;
+  text-align: center;
+}
+
+@keyframes animstart {
+  0% {
+    transform: translateX(200vw);
+  }
+
+
+  100% {
+    transform: translateX(0px);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes animend {
+  0% {
+    transform: translateX(0px);
   }
-  to {
-    transform: rotate(360deg);
+
+
+  100% {
+    transform: translateX(-200vh);
   }
 }

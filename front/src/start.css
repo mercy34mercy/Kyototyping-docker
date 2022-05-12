@@ -1,0 +1,69 @@
+.manue{
+    height: 100%;
+    background-image: url("../public/city.png");
+    background-size: cover;
+    /* padding: 10rem; */
+}
+
+.startmanuebar{
+    height: 100%;
+}
+
+.pc-dsp{
+    height: 100%;
+}
+
+.sp-dsp{
+    height: 100%;
+}
+
+.root{
+    background-color: #abd1ea;
+    height: 100%;
+}
+
+.frompc{
+    color: #008AE2;
+    font-size: 3em;
+    text-align: center;
+    padding-top: 60%;
+    height: 100%;
+    font-family: "Nico Moji";
+}
+
+.manuebar{
+    padding-top: 6rem;
+}
+
+.startButton{
+    padding-top:30rem;
+    width: 100%;
+    color: #008AE2;
+    text-align: center;
+    font-family: "Nico Moji";
+    font-size: 5rem;
+}
+
+p{
+    margin: 0 0;
+}
+
+.pc-dsp {
+    display: block;
+}
+
+.sp-dsp {
+    display: none;
+}
+
+@media only screen and (max-width : 736px) {
+    .pc-dsp {
+        display: none;
+    }
+
+    .sp-dsp {
+        display: block;
+    }
+}
+
+
