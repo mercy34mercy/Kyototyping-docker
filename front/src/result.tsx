@@ -15,7 +15,7 @@ export const Result = () => {
         document.addEventListener("keydown", keyFunction, false)
     })
 
-    const keyFunction = useCallback((event) => {
+    const keyFunction = useCallback((event:any) => {
         if (event.key === "Escape") {
             navigate("/")
         }

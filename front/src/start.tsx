@@ -10,7 +10,7 @@ export const Startview = () => {
     }   
     )
 
-    const keyFunction = useCallback((event) => {
+    const keyFunction = useCallback((event:any) => {
         console.log(event.key)
         if (event.key === " ") {
             navigate("game")
