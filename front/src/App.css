@@ -2,11 +2,11 @@
   border-radius: 2rem;
   width: 100%;
   padding-top: 20vh;
-
+  
 }
 
-.baranimation {
-  animation: anim 2.5s infinite linear;
+.baranimation{
+    animation: anim 2.5s infinite linear;
 }
 
 .questionBox {
@@ -15,7 +15,7 @@
   height: 6rem;
   text-align: center;
   color: #008AE2;
-  font-weight: bold
+  font-weight:bold
 }
 
 .textOutput {
@@ -41,11 +41,11 @@
   /* text-align: center; */
   height: 100%;
   background-image: url("../public/city.png");
-  background-size: cover;
+  background-size:cover;
   /* backdrop-filter: invert(8%) sepia(99%) saturate(7044%) hue-rotate(247deg) brightness(100%) contrast(145%); */
 }
 
-.Game img {
+.Game img{
   filter: invert(8%) sepia(99%) saturate(7044%) hue-rotate(247deg) brightness(100%) contrast(145%);
 }
 

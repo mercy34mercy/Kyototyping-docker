@@ -1,6 +1,11 @@
 import React, { useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './App.css';
+import ReactGA from 'react-ga';
+const TRACKING_ID = "G-PN662GXGJ2"; // OUR_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
+ReactGA.pageview(window.location.pathname + window.location.search);
+
 
 
 export const Game = () => {
@@ -17,8 +22,13 @@ export const Game = () => {
     document.addEventListener("keydown", keyFunction, false)
   })
 
+  // const random = getRandomInt(20)
+  // setrandomcounter(random)
 
-  const keyFunction = useCallback((event:any) => {
+
+
+
+  const keyFunction = useCallback((event) => {
     if (event.key == "Escape") {
       navigate("/")
     }
@@ -28,7 +38,7 @@ export const Game = () => {
 
   return (
     <div className='Game'>
-      <Inputbar updateInputString={setinputString} answerString={inputString} updatetypeStringlen={settypeStringlen} updateanswerTypeStringlen={setanswerTypeStringlen} typeStringnum={typeStringlen} answerStringnum={answerTypeStringlen} starttime={startTime}></Inputbar>
+      <Inputbar  updateInputString={setinputString} answerString={inputString} updatetypeStringlen={settypeStringlen} updateanswerTypeStringlen={setanswerTypeStringlen} typeStringnum={typeStringlen} answerStringnum={answerTypeStringlen} starttime={startTime}></Inputbar>
     </div>
   )
 }
@@ -68,16 +78,26 @@ const Inputbar = (props: InputbarProps) => {
     ["七条壬生", "shitizyoumibu"],
     ["堀川高辻", "horikawatakatuzi"],
     ["西大路花屋町", "nishioozihanayamati"],
+    ["油小路東寺道","aburanokouzitouzimiti"],
+    ["河原町十条","kawaramatizyuuzyou"],
+    ["九条油小路","kuzyouaburanokouzi"],
+    ["九条大宮","kuzyouoomiya"],
+    ["九条新町","kuzyousinmati"],
+    ["十条烏丸","zyuuzyoukarasuma"],
+    ["中山稲荷","nakayamainari"],
+    ["西大路九条","nishioozikuzyou"],
+    ["八条壬生","hatizyoumibu"]
+    
   ]
 
   const getRandomInt = (max: number) => {
     return Math.floor(Math.random() * max);
   }
 
-  const [misstype, setmisstype] = React.useState(0)
+  const [misstype,setmisstype] = React.useState(0)
   const [counter, setCounter] = React.useState(0);
   const [questioncounter, setQuestioncounter] = React.useState(0);
-  const [questionnumber, setQuestionnumber] = React.useState(getRandomInt(20));
+  const [questionnumber, setQuestionnumber] = React.useState(getRandomInt(30));
   const [answerstring, setAnswer] = React.useState("");
   const [cssstyle, setCssStyle] = React.useState("");
   const questionlength: number = questions2[questionnumber][1].length;
@@ -105,7 +125,7 @@ const Inputbar = (props: InputbarProps) => {
       const endTime = Date.now()
       console.log(endTime);
       const time: number = endTime - props.starttime
-      navigate("/result", { state: { answernum: props.answerStringnum, time: time, misstyping: misstype } })
+      navigate("/result", { state: { answernum: props.answerStringnum, time: time,misstyping:misstype } })
     }
 
     judgement(props.answerString)
@@ -113,7 +133,7 @@ const Inputbar = (props: InputbarProps) => {
     if (questionlength === counter) {
       const rand = getRandomInt(20)
       setQuestionnumber(rand)
-      setQuestioncounter(questioncounter + 1)
+      setQuestioncounter(questioncounter+1)
       setAnswer("")
       setCounter(0)
     }
