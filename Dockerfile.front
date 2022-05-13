@@ -3,11 +3,11 @@ FROM node:14.15.1-buster
 # コンテナ内で作業するディレクトリを指定
 WORKDIR /usr/src/app
 # package.jsonとyarn.lockを/usr/src/appにコピー
-COPY ["./front/package.json", "./front/package-lock.json", "./"]
-RUN npm install
+COPY ["./front/package.json", "./front/yarn.lock", "./"]
+RUN yarn install
 # ファイルを全部作業用ディレクトリにコピー
 COPY ./front .
 # ポートのエクスポート
 EXPOSE 3000
 
-CMD npm start
+CMD yarn start
